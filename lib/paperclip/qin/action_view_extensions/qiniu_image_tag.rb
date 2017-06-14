@@ -1,5 +1,5 @@
 module Paperclip
-  module Qiniu
+  module Qin
     module ActionViewExtensions
       module QiniuImageTag
         def qiniu_image_tag(source, options={})
@@ -28,4 +28,4 @@ module Paperclip
   end
 end
 
-ActionView::Base.send :include, Paperclip::Qiniu::ActionViewExtensions::QiniuImageTag
+ActionView::Base.send :include, Paperclip::Qin::ActionViewExtensions::QiniuImageTag

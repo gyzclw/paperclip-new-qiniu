@@ -1,5 +1,5 @@
 module Paperclip
-  module Qiniu
+  module Qin
     class Error < StandardError; end
     class UploadFailed < Error; end
   end

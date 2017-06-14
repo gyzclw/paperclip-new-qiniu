@@ -1,5 +1,5 @@
 module Paperclip
-  module Qiniu
+  module Qin
     module ActionViewExtensions
       module QiniuImagePath
         def qiniu_image_path(source, options={})
@@ -31,4 +31,4 @@ module Paperclip
   end
 end
 
-ActionView::Base.send :include, Paperclip::Qiniu::ActionViewExtensions::QiniuImagePath
+ActionView::Base.send :include, Paperclip::Qin::ActionViewExtensions::QiniuImagePath

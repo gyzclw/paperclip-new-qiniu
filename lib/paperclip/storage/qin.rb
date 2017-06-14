@@ -29,7 +29,6 @@ module Paperclip
       def flush_writes
         init
         for style, file in @queued_for_write do
-          log("saving #{path(style)}")
           retried = false
           begin
             upload(file, path(style))
@@ -53,24 +52,20 @@ module Paperclip
 
       def public_url(style = default_style)
         init
-        if @options[:qiniu_host]
-          "#{@public_url}"
-        else
           code, result, response_headers = Qiniu::Storage.stat(bucket, path(style))
           if code==200
-            "http://orh1veryp.bkt.clouddn.com/#{path(style)}"
+            "#{@options[:qiniu_host]}/#{path(style)}"
           else
             nil
           end
-        end
       end
 
       private
 
       def init
         return if @inited
-        Qiniu.establish_connection! access_key: 'POaiuPPUJN9cxtakBp3Iar9Ur9WidG2PyHYtIGk9',
-                             secret_key: 'JcGKzcLcOg2IU_KW4RilS_g5LKESS5TSXjp5YH_G'
+        Qiniu.establish_connection! access_key: @options[:qiniu_acess],
+                             secret_key: @options[:qiniu_secret]
         inited = true
       end
 

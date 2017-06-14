@@ -15,6 +15,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Paperclip::Qiniu::VERSION
   gem.add_dependency "paperclip",'~> 5.0', '>= 5.0.0'
-  gem.add_dependency 'qiniu', '~> 6.9.0', '>= 6.9.0'
+  gem.add_dependency 'qiniu', '~> 6.8.0', '>= 6.8.0'
   gem.add_development_dependency 'rspec'
 end

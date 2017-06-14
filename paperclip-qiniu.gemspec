@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["gyzclw@hotmail.com"]
   gem.description   = %q{new paperclip plugin for qiniu}
   gem.summary       = %q{new paperclip plugin for qiniu}
-  gem.homepage      = "https://github.com/gyzclw/new_paperclip-qiniu"
+  gem.homepage      = "https://github.com/gyzclw/paperclip-new-qiniu"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
